@@ -1,0 +1,16 @@
+{% extends 'mainLivros/base.html' %}
+
+{% block title %}  {% endblock %}
+
+{% block content %}
+    <input type="submit" value="Voltar" onclick="location.href = '{% url 'mainLivros:list' %}'">
+    <article>
+        <h2>{{livro.titulo}}</h2>
+        <p>Quantidade de paginas: {{livro.qtdPaginas}}</p>
+        <p>ISBN: {{livro.isbn}}</p>
+        <p>Autores: {{livro.autores}}</p>
+        <p>Editora: {{livro.editora}}</p>
+    </article>
+{% endblock %}
+
+

@@ -1,0 +1,18 @@
+{% extends 'mainLivros/base.html' %}
+
+{% block title %} Lista de livros {% endblock %}
+
+{% block content %}
+    <input type="submit" value="Cadastrar" onclick="location.href = '{% url 'mainLivros:create' %}'">
+    <ul>
+        {% for livro in livro_list %}
+            <li>{{livro.titulo}} 
+                - <a href="{% url 'mainLivros:update' pk=livro.id %}">Editar</a> 
+                - <a href="{% url 'mainLivros:detail' pk=livro.id %}">Vizualizar</a>
+                - <a href="{% url 'mainLivros:delete' pk=livro.id %}">Deletar</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+

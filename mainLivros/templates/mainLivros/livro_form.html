@@ -1,0 +1,15 @@
+{% extends 'mainLivros/base.html' %}
+
+{% block title %} Cadastro Livro {% endblock %}
+
+{% block content %}
+    <h1> Cadastro de Livro </h1>
+    <form method="post" action".">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Salvar">
+        <input type="reset" value="Calcelar" onclick="location.href = '{% url 'mainLivros:list' %}'">
+    </form>
+
+{% endblock %}
+

@@ -1,0 +1,13 @@
+{% extends 'mainLivros/base.html' %}
+
+{% block title %} Deletar Livro {% endblock %}
+
+{% block content %}
+    <h1> Tem certeza que deseja remover o Livro '{{livro.titulo}}' </h1>
+    <form method="post" action".">
+        {% csrf_token %}
+        <input type="submit" value="Sim, tenho certeza">
+        <input type="reset" value="Calcelar" onclick="location.href = '{% url 'mainLivros:list' %}'">
+    </form>
+
+{% endblock %}
